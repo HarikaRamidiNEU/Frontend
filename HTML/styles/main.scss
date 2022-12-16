@@ -1,0 +1,384 @@
+/// importing other external scss files
+@use "sass:map";
+@import 'variables.scss';
+@import 'maps.scss';
+@import 'mixins.scss';
+@import 'functions.scss';
+@import 'header.scss';
+@import 'footer.scss';
+
+/* Common font for all the elements */
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* ---------------------------------------------------------------- */
+/* Styling with tags */
+
+/* background color set for the body tag */
+body{
+    background-color: #f2f8fabd;
+}
+
+/* Removing border for all input elements */
+input{
+    border: none;
+}
+
+/* all the h2 tag content is placed center */
+h2{
+    text-align: center;
+}
+
+/* all the tags are set to have text color as black and without any text-decoration */
+a{
+    color: $defaultTextColor; 
+    text-decoration: none;
+}
+
+/* all the aside tags are set to align with specific width */
+aside{
+    ///extending the displa block style
+    @extend .displayBlock;
+    width: calc(42% - 10px);
+}
+
+
+/* ---------------------------------------------------------------- */
+/* Styling with ClassNames */
+
+/* explore button without border and round corners */
+.exploreButton{
+    ///including button mixin
+    @include buttonMixin;
+    border-radius: 10px;
+    padding: 10px;
+    float: left;
+    margin-left: ($basic * 2);
+    margin-top: $basic - 2;
+    border: none;
+}
+
+/* background image is set with a dash shade using linear gradient for form */
+.formSection{
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),url(getBackgroundImage("travel"));
+    background-blend-mode: darken;
+    height: 400px;
+    border-radius: 10px;
+    color: $imagesTextColor;
+    text-align: center;
+}
+
+/* form Header to be placed in the center of the image*/
+.formHeader{
+    @include multiValued(padding, 100px 500px 15px);
+}
+
+/* form Elements to be placed in a box with white background and adjusted using position and top elements */
+.formElement{
+    color: $defaultTextColor;
+    background-color: white;
+    width: 45%;
+    border-radius: 10px;
+    height: 50px;
+    margin: 0 400px;
+    padding: 5px 0px;
+    position: absolute;
+    top: 320px;
+    opacity: 0.8;
+}
+
+/* form elements to be aligned in a horizontal line using float left */
+.formElements{
+    float: left;
+    border: none;
+    margin-left: 8px;
+}
+
+/* cards with images to be displayed in a row with inline block and added box shadow for each card */
+.images-row{
+    margin: 20px;
+    border-radius: 10px;
+    padding: 5px;
+    @extend .displayBlock;
+    background-color: white;
+    box-shadow: $shadow;
+}
+
+/* Happy customers articles are arranged horizontally in the same line using inline block and boz shadow is applied */
+.happyCustomer-article{
+    background-color: white ;
+    @extend .displayBlock;
+    height: calc(300px / 2);
+    width: 43%;
+    @include multiValued(margin, 35px 10px 35px 25px);
+    border-radius: 10px;
+    @include multiValued(padding, 25px 15px 25px 40px);
+    box-shadow: $shadow;
+}
+
+/* name of the customer is arranged with absolute position and by adding margins to be aligned beside the image */
+.happyCustomerName{
+    @extend .displayBlock;
+    position: absolute;
+    margin-top: 8px; 
+    margin-left: 5px;
+}
+
+/* title of the customer is arranged with absolute position and by adding margins to be aligned beside the image and below the name*/
+.happyCustomerTitle{
+    @extend .displayBlock;
+    color: grey; 
+    font-size: 14px; 
+    position: absolute; 
+    margin-top: 27px; 
+    margin-left: 5px
+}
+
+/* destination cards to be displayed in rows with the help of inline block and spacing with padding */
+.destinations{
+    padding: 3%;
+}
+
+/* elements with class cards are arranged with outer spacing with margin */
+.cards{
+    display: grid;
+    @include multiValued(margin, 50px 35px);
+}
+
+/* elements with class blogs are arranged with outer spacing with margin */
+.blogs, .places{
+    @include multiValued(margin, 50px 40px);
+}
+
+/* elements with class places are arranged with outer spacing with margin */
+.destinations-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+/* Individual blog is styled with rounded corners and text is aligned in the center */
+.blog{
+    border-radius: 10px;
+    margin: 15px;
+    text-align: center;
+    background: round;
+}
+
+/* ---------------------------------------------------------------- */
+/* Styling with Combinators */
+
+/* form size of the h1 tag which is a immediate child of formheader is increased*/
+.formHeader>h1{
+    font-size: 2em;
+    margin-bottom: 0px;
+}
+
+/* Added right and left borders to the second element which has forElements as class attribute */
+.formElements:nth-child(2){
+    border-left: add(1px solid lightgray);
+    border-right: add(1px solid lightgray);
+}
+
+/* labels of the input elements to be placed above the inputs using display block */
+.formElements {
+    ///nesting using scss
+    label{
+        display: block;
+    }
+}
+
+/// to set the grid column value to 4 cards
+@for $i from 1 through 4 {
+    .images-row:nth-child(#{$i}){
+        grid-column: $i;
+    }
+  }
+
+/* set the width and height of the images within all the cards with img as child*/
+.images-row {
+    img{
+        width:100px; 
+        height: 100px;
+    }
+}
+
+/* different font is applied to all the sibling of figcaption with a tag p */
+figcaption ~ p {
+    font-family: serif;
+}
+
+/* All the  img tag children of elements with happyCustomer-article class are set to float left for arrangement */
+.happyCustomer-article {
+    img{
+        float: left;
+    }
+}
+
+/* img tag which is an immediate child of destinations is set to have a specific width and height with round corners */
+.destinations > img{
+    height: 250px; 
+    border-radius: 10px;
+}
+
+/* all the p tags under destinations is set to have a specific width */
+.destinations {
+    p{
+        width: 350px;
+    }
+}
+
+/* div which is a child element of elements with class blogs are arranged on the left and with specific width */
+.blogs > div{
+    float: left; 
+    width: 58%;
+}
+
+/* all a tags under the elements with class places are arranged with outer spacing with margin */
+.places {
+    a{
+        margin: 5px;
+    }
+}
+
+/* divs which are an immediate sibling of h2 which are children of elements with places className have specific width and aligned center*/
+.places h2 + div{
+    text-align: center;
+    width: 55%; 
+    margin-left:22%; 
+    margin-top: 40px;
+}
+
+/* text on the blog is arranged with inner spacing with the help of padding and text color is set to white */
+.blog {
+    h1{
+        @include multiValued(padding, 160px 260px);
+        color: $imagesTextColor;;
+    }
+}
+
+/* divs which are children of elements with class name blog which are children of aside elements are set to a particular height by giving importance */
+aside {
+    .blog{
+        div{
+            height: add(190px !important);
+        }
+        /* h1 tags which are children of elements with class name blog which are children of aside elements are given some inner spacing by giving importance */
+        h1{
+            padding: add(80px 160px !important);
+        }
+    }
+}
+
+blockquote + div{
+    margin-left: 20px;
+    position: relative;
+    bottom: 50px;
+}
+blockquote + div > img{
+    @include smallIcons(50px, $circle: true);
+}
+
+/* ---------------------------------------------------------------------------------------*/
+/* Styling with the help of attributes */
+
+/* tags with name destinationIcons are set to left side of parent element */
+[name='destinationIcons']{
+    float: left;
+}
+
+[name='destinationIcons'] img{
+    @include smallIcons(30px, $circle: true);
+}
+
+/* divs which are siblings of the tags with name destinationIcons are set to right side of parent element */
+[name='destinationIcons'] ~ div{
+    float: right;
+}
+
+/* tags with title which contains 1 are set to a background image with dark shade */
+[title*='1']{
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),url(getBackgroundImage("mountain"));
+    height: 400px;
+}
+
+/* tags with title which contains 2 are set to a background image with dark shade */
+[title*='2']{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),url(getBackgroundImage("flight"));
+    height: 190px;
+}
+
+/* tags with title which contains 3 are set to a background image with dark shade */
+[title*='3']{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),url(getBackgroundImage("traveller"));
+    height: 190px;
+}
+
+/* setting the width of the input elements which are immediate siblings of the label tags with for attribute value place */
+label[for="place"] + input{
+    width: 100%;
+}
+
+input[type^="date"]{
+    width: 120px;
+}
+
+/* ---------------------------------------------------------------------------------------*/
+/* Styling with the help of pseudo-classes, pseudo-elements */
+
+/* On hover and focus the the text is highlighted */
+.places a:hover, .places a:focus{
+    font-weight: map.get($font-weights,"bold");
+ } 
+
+/* removing the outline of text elements on focus */
+input:focus, select:focus{
+    outline: none;
+}
+
+/* adding the placeholder to datetime tag */
+input[type^="date"]::before {
+    content: attr(placeholder) !important;
+    color: #aaa;
+    margin-left: 2.5em;
+  }
+
+/* removing the outline of text elements on focus */
+input[placeholder^='Add']::-webkit-calendar-picker-indicator{
+    content: attr(placeholder) !important;
+        width: 100%;
+        margin: 0;
+        background: none;
+}
+
+/* zooming content on the image on hover and focus for blogs*/
+.blog:hover div,
+.blog:focus div{
+  transform: scale(1.2);
+}
+  
+  blockquote::after {
+      content: none;
+  }
+  blockquote {
+      quotes: "“" "”" ;
+      left: -60px;
+      display: inline-flex;
+      position: relative;
+      top: 30px;
+  }
+
+  blockquote:before {
+    color: #4758e947;
+    content: open-quote;
+    font-size: 6em;
+    line-height: 0.1em;
+    margin-right: 0.2em;
+    vertical-align: -0.4em;
+  }
+  blockquote {
+    p {
+        display: inline-flex;
+        position: relative;
+        top: -50px;
+    }
+  }

@@ -1,0 +1,28 @@
+//to use math operations
+@use "sass:math";
+
+/// this is used to reuse the styles for buttons
+@mixin buttonMixin{
+    color: white;
+    background-color: $buttonBackgroundColor;
+    border: none;
+}
+
+/// this is used to reuse the width and height
+@mixin smallIcons($size, $circle: false){
+    width: $size;
+    height: $size;
+    @if ($circle){
+        border-radius: math.div($size, 2);
+    }
+}
+
+/// to add multiple values for a property
+@mixin multiValued($property, $values) {
+    $total: '';
+    @each $value in $values {
+        //interpolation is used here
+        $total : #{$total} #{$value};
+    }
+    #{$property}: $total;
+  }

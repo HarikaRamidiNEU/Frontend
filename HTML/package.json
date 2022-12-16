@@ -1,0 +1,22 @@
+{
+  "name": "assignment-4-harikaramidineu",
+  "version": "1.0.0",
+  "description": "This assignment is to learn CSS positioning, Grid layout / Flexbox, SCSS features like variables, mixins, inheritance, loops, functions, math operations, etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neu-mis-info6150-fall-2022/assignment-4-HarikaRamidiNEU.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neu-mis-info6150-fall-2022/assignment-4-HarikaRamidiNEU/issues"
+  },
+  "homepage": "https://github.com/neu-mis-info6150-fall-2022/assignment-4-HarikaRamidiNEU#readme",
+  "dependencies": {
+    "sass": "^1.55.0"
+  }
+}

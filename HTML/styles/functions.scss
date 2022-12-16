@@ -1,0 +1,33 @@
+/// sum to append multiple values
+/// @param {numbers...} 
+///   The values to be add.
+/// @return {return} `$return` the appended numbers.
+@function add($numbers...) {
+    $return: 0;
+    @each $number in $numbers {
+      $return: $return + $number;
+    }
+    @return $return;
+}
+
+/// to get correct background image from map
+/// @param {name} 
+///   based on what the background image should be returned from background images map
+/// @return {return} return the value of the background image from the backgroundImages map.
+@function getBackgroundImage($name){
+    @if $name == travel {
+        @return map.get($backgroundimages,"travel");
+    }
+    @else if $name == mountain{
+        @return map.get($backgroundimages,"mountain");
+    }
+    @else if $name == flight {
+        @return map.get($backgroundimages,"flight");
+    }
+    @else if $name == traveller {
+        @return map.get($backgroundimages,"traveller");
+    }
+    @else{
+        @error "Unknown Div to insert image.";
+    }
+}

@@ -1,0 +1,54 @@
+/// this is used for inheritance
+.displayBlock{
+    display: inline-block;
+}
+
+header{
+    display: grid;
+    position: sticky;
+    top: 0px;
+    background-color: #ffffff;
+}
+
+/* Navigation bar to be set to the center of the page horizontally*/
+.navBar{
+   grid-column: 2;
+   margin-left: 10%;
+}
+
+/* Navigation bar to be set to the center of the page vertically */
+.nav-ul{
+    margin-top: 10px;
+}
+
+/* header list items to be displayed horizontally in a line using inline-block */
+.header-list-items{
+    @extend .displayBlock;
+    padding: 0px 25px;
+    color: $defaultTextColor;
+    font-size: 20px;
+}
+
+/* connect button without border and round corners to be placed towards the right top corner with float */
+.connect-button{
+    @include buttonMixin;
+    border-radius: 15px;
+    margin-right: 15px;
+    margin-top: 10px;
+    grid-column: 3;
+    width: 30%;
+    height: 50%;
+    margin-left: 68%;
+}
+
+/* logo to be placed towards the left of the browser with float left */
+.logo{
+    grid-column: 1;
+}
+
+/* width of the logoImg which is a child of logo is set to auto*/
+.logo > .logoImg{
+    width:auto;
+    margin-top: 10px;
+    margin-left: 10px;
+}

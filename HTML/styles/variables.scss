@@ -1,0 +1,12 @@
+/// variables used in multiple files
+
+$buttonBackgroundColor : rgba(44, 44, 216, 0.8196078431);
+$shadow: rgb(100 100 111 / 20%) 0px 7px 29px 0px;
+$defaultTextColor : rgb(0, 0, 0);
+$imagesTextColor : rgba(253, 251, 251, 0.989);
+$venus: #998099;
+$footerBackgroundColor: mix(scale-color($venus, $lightness: +85%),scale-color(midnightblue, $lightness: +75%)); 
+$basic: 10px;
+$fonts: (Arial, Helvetica, sans-serif);
+
+@debug calc(400px + 10%);

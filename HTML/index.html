@@ -5,7 +5,7 @@
          <!--Title of the web page-->
         <title>HTML Assignment</title>
         <base target="_blank">
-        <link rel="stylesheet" href="styles/main.css">  <!--Styles are part of this file-->
+        <link rel="stylesheet" href="dist/main.css">  <!--Styles are part of this file-->
         <link rel="icon" type="image/x-icon" href="images/favicon.jpg"> <!--favicon of this website-->
         <!--Meta data-->
         <meta charset="UTF-8">
@@ -15,18 +15,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <!--Template holds hidden content which can be rendered later with the help of javascript-->
-        <template>
-            <h2>This is hidden</h2>
-            <pre>This is highlighted text</pre>
-          </template>
-        <main>
         <!--navigation elements are part of the header-->
         <header>
-            <picture id="logo">
-                <source media="(min-width:650px)" srcset="images/Logo.png">
-                <source media="(min-width:465px)" srcset="images/smallLogo.png">
-                <img src="images/Logo.png" alt="Logo" style="width:auto;">
+            <picture id="logo" class="logo">
+                
+                <source media="(min-width:650px)" srcset="images/smallLogo.png">
+                <img src="images/smallLogo.png" alt="Logo" class="logoImg">
               </picture>
             <nav class="navBar">
                 <ul class="nav-ul">
@@ -41,37 +35,34 @@
             <button class="connect-button">Connect</button>
         </header>
         <section class="formSection">
-            <div style="opacity: 0.5;height: 400px;background-color: black; border-radius: 10px;">
              <!--This section holds a form with text and date input types-->
-             <div style="padding: 100px 500px 15px;">
+             <div class="formHeader">
             <h1>TRAVEL TO EXPLORE</h1>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi velit illo quo necessitatibus nihil qui dolorum adipisci provident sint tempora aut minima sapiente, est.</p>
-        </div>
-    </div>
+             </div>
     <!--Form Elements with validations-->
             <form class="formElement" action="/" method="get">
                 <fieldset class="formElements">
-                    <label for="place" style="display: block;">Where You Want to go</label>
-                    <input type="text" id="place" placeholder="Search your Location" required minlength="2" maxlength="6">
+                    <label for="place">Where You Want to go</label>
+                    <input type="text" id="place" placeholder="&#x1f50d; Search your Location" required minlength="2" maxlength="6">
                 </fieldset>
                 <fieldset class="formElements">
-                    <label for="checkIn" style="display: block;">Check-in</label>
-                    <input type="date" id="checkInDate" placeholder="Add Date" required min="2019-12-25" step="1">
+                    <label for="checkIn">Check-in</label>
+                    <input type="date" id="checkInDate" placeholder="AddDate" required min="2019-12-25" step="1">
                 </fieldset>
                 <fieldset class="formElements">
-                    <label for="checkOut" style="display: block;">Check-out</label>
-                    <input type="date" id="checkOutDate" placeholder="Add Date" required min="2019-12-25" step="1">
+                    <label for="checkOut">Check-out</label>
+                    <input type="date" id="checkOutDate" placeholder="AddDate" required min="2019-12-25" step="1">
                 </fieldset>
                 <input type="submit" value="Explore Now" class="exploreButton">
             </form>
-       
         </section>
-        <section id="cards">
+        <section class="cards">
             <!--This section holds a row of images with titles and descriptions-->
             <div class="images-row">
                 <!--implementing figure elements with caption-->
                 <figure>
-                    <img src="images/BestPrices.png" alt="Get Best prices" style="width:50px; height: 50px;">
+                    <img src="images/BestPrices.png" alt="Get Best prices">
                     <figcaption>Get Best prices</figcaption>
                     <p>Pay through our application and save thousands and   get amazing rewards</p>
                   </figure>
@@ -79,15 +70,15 @@
             <div class="images-row">
                 <!--implementing figure elements with caption-->
                 <figure>
-                    <img src="images/CovidSafe.png" alt="Covid Safe" style="width:50px; height: 50px;">
+                    <img src="images/CovidSafe.png" alt="Covid Safe">
                     <figcaption>Covid Safe</figcaption>
-                    <p>We have all the curated hotels that have all the precaution for a covid <s>safe</s> environment</p>
+                    <p>We have all the curated hotels that have all the precaution for a covid safe environment</p>
             </figure>
             </div>
             <div class="images-row">
                 <!--implementing figure elements with caption-->
                 <figure>
-                    <img src="images/flexiblePayment.png" alt="Flexible Payment" style="width:50px; height: 50px;">
+                    <img src="images/flexiblePayment.png" alt="Flexible Payment">
                     <figcaption>Flexible Payment</figcaption>
                     <p>Enjoy the flexible payment through our app and get rewards on every payment</p>
                 </figure>
@@ -95,129 +86,122 @@
             <div class="images-row">
                 <!--implementing figure elements with caption-->
                 <figure>
-                    <img src="images/NearYou.png" alt="Trulli" style="width:50px; height: 50px;">
+                    <img src="images/NearYou.png" alt="Trulli">
                     <figcaption>Find the Best Near You</figcaption>
                     <p>Find the best hotels and places to visit near you in a single click</p>
             </figure>
             </div>
         </section>
-        <section id="places">
-            <h2 style="text-align: center;">Recommended Destination</h2>
-            <div style="text-align: center; width: 48%; margin-left:25%; margin-top: 40px;">
+        <section id="places" class="places">
+            <h2>Recommended Destination</h2>
+            <div>
                 <!--Underlining the selected tab-->
-            <u><a style="padding: 10px;"><b>The Weekend Break</b></a></u>
+            <a><b>The Weekend Break</b></a>
                 <a>The Package Holiday</a>
                 <a>The Group Tour</a>
                 <a>The Long Term Slow Travel</a>
                 <hr>  <!--Used to draw a line-->
             </div>
-            <div>
+            <div class="destinations-container">
                 <!-- Details Tag with summary-->
                 <div class="destinations">
-                    <img src="images/London.png" alt="Singapore" style="width:350px; height: 250px; border-radius: 10px;">
-                    <details>
-                        <summary>Singapore</summary>
-                        <p style="width: 350px;"><small>Singapore, officially the Republic of Singapore, is a soverign island city-state in maritime southeast</small></p>
-                        <div style="float: left;"><span><img src="images/smallIcons.png" alt="smallIcons" width="90px" height="30px"></span><br><span><small>1000 kms</small></span></div>
-                        <div style="float: right;"><span><small>Rs 38000</small></span><br><span><small>Approx 2 night trip</small></span></div>
-                    </details>
+                    <img src="images/London.png" alt="Singapore">
+                        <h5>Singapore</h5>
+                        <p><small>Singapore, officially the Republic of Singapore, is a soverign island city-state in maritime southeast</small></p>
+                        <div name="destinationIcons"><span><img src="images/smallIconStay.png" alt="smallIcons"><img src="images/smallIconFood.png" alt="smallIcons"><img src="images/smallIconFlight.png" alt="smallIcons"></span><br><span><small>1000 kms</small></span></div>
+                        <div><span><small>Rs 38000</small></span><br><span><small>Approx 2 night trip</small></span></div>
                 </div>
                 <div class="destinations">
-                    <img src="images/Thailand.png" alt="Thailand" width="350" height="250" style="border-radius: 10px;">
-                    <details>
-                        <summary>Thailand</summary>
-                        <p style="width: 350px;"><small>Thailand is a <mark>Southeast Asian</mark> country. It's known for tropical beaches, opulant royal palaces</small></p>
-                        <div style="float: left;"><span><img src="images/smallIcons.png" alt="smallIcons" width="90px" height="30px"></span><br><span><small>1000 kms</small></span></div>
-                        <div style="float: right;"><span><small>Rs 38000</small></span><br><span><small>Approx 2 night trip</small></span></div>
-                    </details>
+                    <img src="images/Thailand.png" alt="Thailand">
+                        <h5>Thailand</h5>
+                        <p><small>Thailand is a Southeast Asian country. It's known for tropical beaches, opulant royal palaces</small></p>
+                        <div name="destinationIcons"><span><img src="images/smallIconStay.png" alt="smallIcons"><img src="images/smallIconFood.png" alt="smallIcons"><img src="images/smallIconFlight.png" alt="smallIcons"></span><br><span><small>1000 kms</small></span></div>
+                        <div><span><small>Rs 38000</small></span><br><span><small>Approx 2 night trip</small></span></div>
                 </div>
                 <div class="destinations">
-                    <img src="images/paris.png" alt="Paris" style="width:350px; height: 250px; border-radius: 10px;">
-                    <details>
-                        <summary>Paris</summary>
-                        <p style="width: 350px;"><small>Paris, France's capital is a major Europian city and a global center for art, fashion, and gastronomy</small></p>
-                        <div style="float: left;"><span><img src="images/smallIcons.png" alt="smallIcons" width="90px" height="30px"></span><br><span><small>1000 kms</small></span></div>
-                        <div style="float: right;"><span><small>Rs 38000</small></span><br><span><small>Approx 2 night trip</small></span></div>
-                    </details>
+                    <img src="images/paris.png" alt="Paris">
+                        <h5>Paris</h5>
+                        <p><small>Paris, France's capital is a major Europian city and a global center for art, fashion, and gastronomy</small></p>
+                        <div name="destinationIcons"><span><img src="images/smallIconStay.png" alt="smallIcons"><img src="images/smallIconFood.png" alt="smallIcons"><img src="images/smallIconFlight.png" alt="smallIcons"></span><br><span><small>1000 kms</small></span></div>
+                        <div><span><small>Rs 38000</small></span><br><span><small>Approx 2 night trip</small></span></div>
                 </div>
                 <div class="destinations">
-                    <img src="images/NewZealand.png" alt="NewZealand" width="350" height="250" style="border-radius: 10px;">
-                    <details>
-                        <summary>New Zealand</summary>
-                        <p style="width: 350px;"><small>New Zealand is an island country in the southwestern Pacific Ocean. It consists of two main</small></p>
-                        <div style="float: left;"><span><img src="images/smallIcons.png" alt="smallIcons" width="90px" height="30px"></span><br><span><small>1000 kms</small></span></div>
-                        <div style="float: right;"><span><small>Rs 38000</small></span><br><span><small>Approx 2 night trip</small></span></div>
-                    </details>
+                    <img src="images/NewZealand.png" alt="NewZealand">
+                        <h5>New Zealand</h5>
+                        <p><small>New Zealand is an island country in the southwestern Pacific Ocean. It consists of two main</small></p>
+                        <div name="destinationIcons"><span><img src="images/smallIconStay.png" alt="smallIcons"><img src="images/smallIconFood.png" alt="smallIcons"><img src="images/smallIconFlight.png" alt="smallIcons"></span><br><span><small>1000 kms</small></span></div>
+                        <div><span><small>Rs 38000</small></span><br><span><small>Approx 2 night trip</small></span></div>
                 </div>
                 <div class="destinations">
-                    <img src="images/Bora Bora.png" alt="Bora Bora" style="width:350px; height: 250px; border-radius: 10px;">
-                    <details>
-                        <summary>Bora Bora</summary>
-                        <p style="width: 350px;"><small>Pay through our application and save thousands and get amazing rewards</small></p>
-                        <div style="float: left;"><span><img src="images/smallIcons.png" alt="smallIcons" width="90px" height="30px"></span><br><span><small>1000 kms</small></span></div>
-                        <div style="float: right;"><span><small>Rs 38000</small></span><br><span><small>Approx 2 night trip</small></span></div>
-                    </details>
+                    <img src="images/Bora Bora.png" alt="Bora Bora">
+                        <h5>Bora Bora</h5>
+                        <p><small>Pay through our application and save thousands and get amazing rewards</small></p>
+                        <div name="destinationIcons"><span><img src="images/smallIconStay.png" alt="smallIcons"><img src="images/smallIconFood.png" alt="smallIcons"><img src="images/smallIconFlight.png" alt="smallIcons"></span><br><span><small>1000 kms</small></span></div>
+                        <div><span><small>Rs 38000</small></span><br><span><small>Approx 2 night trip</small></span></div>
                 </div>
                 <div class="destinations">
-                    <img src="images/London.png" alt="London" width="350" height="250" style="border-radius: 10px;">
-                    <details>
-                        <summary>London</summary>
-                        <p style="width: 350px;"><small>Pay through our <dffn>application</dffn> and save thousands and get amazing rewards</small></p>
-                        <div style="float: left;"><span><img src="images/smallIcons.png" alt="smallIcons" width="90px" height="30px"></span><br><span><small>1000 kms</small></span></div>
-                        <div style="float: right;"><span><small>Rs 38000</small></span><br><span><small>Approx 2 night trip</small></span></div>
-                    </details>
+                    <img src="images/London.png" alt="London">
+                        <h5>London</h5>
+                        <p><small>Pay through our application and save thousands and get amazing rewards</small></p>
+                        <div name="destinationIcons"><span><img src="images/smallIconStay.png" alt="smallIcons"><img src="images/smallIconFood.png" alt="smallIcons"><img src="images/smallIconFlight.png" alt="smallIcons"></span><br><span><small>1000 kms</small></span></div>
+                        <div><span><small>Rs 38000</small></span><br><span><small>Approx 2 night trip</small></span></div>
                 </div>
             </div>
         </section>
         <!--This section holds divs to have block structure in the form of blogs-->
-        <section id="blogs">
-            <h2 style="text-align: center;">Blogs</h2>
-            <div style="float: left; width: 750px;">
-                <div class="blog" style="background-image: url(images/Blog1.jpeg); height: 400px;">
-                    <div style="opacity: 0.5;background-color: black; border-radius: 10px;height: 400px;">
-                    <h1 style="padding: 160px 260px; color: white;">The Ultimate guide to climbing Mount Kilimanjaro</h1>
+        <section id="blogs" class="blogs">
+            <h2>Blogs</h2>
+            <div>
+                <div class="blog" title="blog1">
+                    <div>
+                    <h1>The Ultimate guide to climbing Mount Kilimanjaro</h1>
                 </div>
                 </div>
             </div>
             <!--aside is used here to form the required layout-->
-            <aside style="display: inline-block; width: 550px;">
-                <div class="blog" style="background-image: url(images/flightWindow.png);height: 190px;">
-                    <div style="opacity: 0.5;background-color: black; border-radius: 10px;height: 190px;">
-                    <h1 style="padding: 80px 160px; color: white;">12 Things I'd Tell Any New Traveller</h1>
+            <aside>
+                <div class="blog" title="blog2">
+                    <div>
+                    <h1>12 Things I'd Tell Any New Traveller</h1>
                 </div>
                 </div>
-                <div class="blog"  style="background-image: url(images/Blog2.jpeg);height: 190px;">
-                    <div style="opacity: 0.5;background-color: black; border-radius: 10px;height: 190px;">
-                    <h1 style="padding: 80px 160px; color: white;">The Ultimate Packing list for Female Travellers</h1>
+                <div class="blog" title="blog3">
+                    <div>
+                    <h1>The Ultimate Packing list for Female Travellers</h1>
                 </div>
                 </div>
             </aside>
         </section>
         <!--This section has two cards which describes info about customer feedback-->
-        <section id="happyCustomers">
-            <h2 style="text-align: center;">Happy Customers</h2>
+        <section id="happyCustomers" class="happyCustomers">
+            <h2>Happy Customers</h2>
             <article class="happyCustomer-article">
                 <!--quotes are added with the help of q tag-->
-                <p><q>Lorem ipsum dolor sit amet <i>consectetur</i> adipisicing elit. Nostrum aut suscipit culpa ipsum doloremque expedita tempora facere dolorem perferendis porro est aliquam dolorum ratione modi pariatur, qui ut natus accusantium.</q></p>
-                <img src="images/Customer.png" alt="customer" width="50" height="50" style="float: left;">
-                <dl>
-                    <dt><strong class="happyCustomerName">Shalini Singh</strong></dt>
-                    <dd><p class="happyCustomerTitle">Project Manager flyhigh</p></dd>
-                </dl>
+                <blockquote><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum aut suscipit culpa ipsum doloremque expedita tempora facere dolorem perferendis porro est aliquam dolorum ratione modi pariatur, qui ut natus</p>
+                </blockquote>
+                <div>
+                <img src="images/Customer.png" alt="customer">
+                    <dl>
+                        <dt><strong class="happyCustomerName">Shalini Singh</strong></dt>
+                        <dd><p class="happyCustomerTitle">Project Manager flyhigh</p></dd>
+                    </dl>
+                </div>
             </article>
             <article class="happyCustomer-article">
-                <p><q>Lorem ipsum dolor sit amet, <em>consectetur</em> adipisicing elit. Architecto incidunt perferendis, facere asperiores perspiciatis aspernatur veritatis aliquid provident impedit eligendi dolorem natus, velit dolor ab quas? Libero eaque repellat necessitatibus!</q></p>
-                <img src="images/Customer.png" alt="customer" width="50" height="50" style="float: left;">
+                <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto incidunt perferendis, facere asperiores perspiciatis aspernatur veritatis aliquid provident impedit eligendi dolorem, velit dolor ab quas?</p></blockquote>
+                <div>
+                <img src="images/Customer.png" alt="customer">
                 <dl>
                     <dt><strong class="happyCustomerName">Shalini Singh</strong></dt>
                     <dd><p class="happyCustomerTitle">Project Manager flyhigh</p></dd>
                 </dl>
+            </div>
             </article>
         </section>
         </main>
         <footer>
-            <p style="float:left ;margin-left: 15px;">Copyright &copy; 2022 Travelo. All rights reserved</p>
-            <ul style="display: inline-block;">
+            <p>Copyright &copy; 2022 Travelo. All rights reserved</p>
+            <ul>
                 <li class="footer-list-items"><a href="#home">Home</a></li>
                 <li class="footer-list-items"><a href="#about">About</a></li>
                 <li class="footer-list-items"><a href="#places">Places</a></li>
@@ -225,9 +209,9 @@
                 <li class="footer-list-items"><a href="#blogs">Blog</a></li>
             </ul>
             <ul class="footer-list-icons-container">
-                <li class="footer-list-icons"><img src="images/facebook.png" alt="facebook"  width="30" height="30"></li>
-                <li class="footer-list-icons"><img src="images/LinkedIn.png" alt="LinkedIn"  width="30" height="30"></li>
-                <li class="footer-list-icons"><img src="images/insta.png" alt="Instagram"  width="32" height="32"></li>
+                <li class="footer-list-icons"><img src="images/facebook.png" alt="facebook"></li>
+                <li class="footer-list-icons"><img src="images/LinkedIn.png" alt="LinkedIn"></li>
+                <li class="footer-list-icons"><img src="images/insta.png" alt="Instagram"></li>
             </ul>
         </footer>
     </body>

@@ -1,0 +1,45 @@
+
+/* footer tag is styled by adding background color and specific height */
+footer{
+    background-color: $footerBackgroundColor;
+    height: 70px;
+    border-radius: 15px;
+    text-align: center;
+    padding-top: 22px;
+    @include multiValued(margin, 15px 15px);
+}
+
+/* list items under footer are set with black color and specific font size */
+.footer-list-items{
+    @extend .displayBlock;
+    @include multiValued(padding, 0px 20px);
+    color: black;
+    font-size: 15px;
+}
+
+/* icons container on the footer is set to be towards the right border of the browser */
+.footer-list-icons-container{
+    float: right;
+    margin-right: 15px;
+}
+
+/* icons are set to be in the same line with inline block */
+.footer-list-icons{
+    @extend .displayBlock;
+    @include multiValued(padding, 0px 5px);
+}
+
+.footer-list-icons>img{
+    @include smallIcons(30px, $circle: true);
+}
+
+/* All the p tags under footer are set with a margin left and are set to left of the browser */
+footer p{
+    float:left ;
+    margin-left: 15px;
+}
+
+/* ul tag which is an immediate sibling of p is set inline block to arrange it horizontally in the same line */
+p + ul{
+    @extend .displayBlock;
+}
