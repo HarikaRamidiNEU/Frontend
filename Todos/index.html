@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="dist/main.css">
+    </head>
+    <body>
+        <!--Main heading-->
+        <header><h1>todos</h1></header>
+        <section class="listSection">
+            <header class="listHeader">
+                <input type="checkbox" id="All" class="allCheckbox">
+                <label id="AllLabel" for="All" class="all">&#10003;</label>
+                <input type="text" id="listInput" class="listInput" placeholder="What needs to be done?" disabled="disabled">
+                <button class="newItem" id="add">new</button>
+            </header>
+             <!--Todo's list section-->
+            <section>
+                <ul id="list" class="list"></ul>
+            </section>
+            <!--Filter with count of items left to complete and filters-->
+            <footer class="todoFooter">
+                <span id="count" class="count"></span>
+                <ul class="filters">
+                    <li class="filterItem" id="allFilter">All</li>
+                    <li class="filterItem" id="activeFilter">Active</li>
+                    <li class="filterItem" id="completedFilter">Completed</li>
+                    <button class="clear" id="clear">Clear Completed</button>
+                </ul>
+            </footer>
+        </section>
+        <!-- Add and view popup modal-->
+        <div class="add-view-modal-container">
+            <div class="overlay"></div>
+            <div class="body-modal">
+                <div class="add-view-modal">
+                    <span class="close">✕</span>
+                    <h2>New Task</h2>
+                    <div class="container-title">
+                        <label for="title" class="label-title">Title</label>
+                        <input type="text" required minlength="2" maxlength="60">
+                    </div>
+                    <div class="container-desc">
+                        <label for="desc" class="label-desc">Description</label>
+                        <input type="text" minlength="2" maxlength="60">
+                    </div>
+                    <div class="container-date">
+                        <label for="date" class="label-date">Due Date</label>
+                        <input type="date" required min="2022-08-01" max="2035-12-01">
+                    </div>
+                    <div class="container-time">
+                        <label for="time" class="label-time">Due Time</label>
+                        <input type="time" required min="12:00" max="18:00">
+                    </div>
+                    <div class="container-status">
+                        <label for="status" class="label-status">Status</label>
+                        <select name="status" id="status" required>
+                            <option value="open">Open</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                    <section class="buttonsSection">
+                        <button class="save" id="save">Add</button>
+                        <button class="cancel" id="cancel">Cancel</button>
+                    </section>
+                </div>
+            </div>
+          </div>
+          <!--List Item node used to duplicate it whenever new list item is created-->
+          <div id="listItems" class="listItems">
+            <li id="ITEM_ID">
+                <div class="view">
+                    <div class="round">
+                        <input type="checkbox" id="checkbox_ITEM_ID">
+                        <label for="checkbox_ITEM_ID"></label>
+                    </div>
+                    <label id="ITEM_ID" class="text">ITEM_NAME</label>
+                    <button class="viewIcon" id="view_ITEM_ID"><img src="images/eyeIcon.png" alt="view"></button>
+                    <button class="remove" id="remove_ITEM_ID">✕</button>
+                </div>
+            </li>
+        </div>
+        <script src="scripts/index.js"></script>
+    </body>
+</html>
