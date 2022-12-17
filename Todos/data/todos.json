@@ -1,0 +1,25 @@
+[{
+    "id" : 1,
+    "title": "Complete Assignment of OOD by Monday",
+    "description": "It is very important assignment",
+    "due_date": "2022-10-16",
+    "due_time": "11:59",
+    "status" : "open"
+},
+{
+    "id" : 2,
+    "title": "Complete Assignment of Web Design By wednesday",
+    "description": "Todo Assignment",
+    "due_date": "2022-10-19",
+    "due_time": "10:00",
+    "status" : "completed"
+},
+{
+    "id" : 3,
+    "title": "Prepare for Co-op",
+    "description": "It is very important task",
+    "due_date": "2022-10-20",
+    "due_time": "17:00",
+    "status" : "completed"
+}
+]

@@ -1,0 +1,19 @@
+{
+  "name": "assignment-6-harikaramidineu",
+  "version": "1.0.0",
+  "description": "This is a Todo website with the following features 1. create a new Task. 2. View the tasks in the form of a list with just titles. 3. View the details of an individual task. 4. Delete a task. 5. Mark complete a task. 6. delete all the completed tasks. 7. filter on the status of the task i.e active and completed.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neu-mis-info6150-fall-2022/assignment-6-HarikaRamidiNEU.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neu-mis-info6150-fall-2022/assignment-6-HarikaRamidiNEU/issues"
+  },
+  "homepage": "https://github.com/neu-mis-info6150-fall-2022/assignment-6-HarikaRamidiNEU#readme"
+}
