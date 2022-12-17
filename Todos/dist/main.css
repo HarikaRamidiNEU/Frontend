@@ -1,0 +1,329 @@
+.active-modal {
+  overflow: hidden;
+}
+.active-modal header h1 {
+  transition: 0.2s;
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+}
+
+.add-view-modal-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0px;
+  top: 0px;
+  visibility: hidden;
+}
+.add-view-modal-container .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  background: #000;
+  opacity: 0;
+  transition: opacity 1.3s;
+}
+.add-view-modal-container .body-modal {
+  max-height: 0px;
+  opacity: 0;
+  overflow: hidden;
+  width: 35%;
+}
+.add-view-modal-container .body-modal .add-view-modal {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0px 0px 65px 0px rgba(0, 0, 0, 0.43);
+}
+.add-view-modal-container .body-modal .add-view-modal .close {
+  float: right;
+  position: relative;
+  top: 18px;
+  font-size: 20px;
+  color: rgb(187, 170, 170);
+  cursor: pointer;
+}
+.add-view-modal-container .body-modal .add-view-modal div[class^=container-] {
+  margin: 10px;
+}
+.add-view-modal-container .body-modal .add-view-modal div[class^=container-] label {
+  float: left;
+  padding: 5px 0;
+  color: rgb(103, 36, 36);
+}
+.add-view-modal-container .body-modal .add-view-modal input, .add-view-modal-container .body-modal .add-view-modal select {
+  font-size: 18px;
+  padding: 8px;
+  font-weight: 100;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  color: inherit;
+  background-color: whitesmoke;
+  width: 100%;
+}
+.add-view-modal-container .body-modal .add-view-modal button {
+  border: 1px solid rgba(0, 0, 0, 0.2196078431);
+  width: 20%;
+  margin: 8px 40px;
+  padding: 5px 10px;
+  color: white;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.add-view-modal-container .body-modal .add-view-modal button.save {
+  background-color: green;
+}
+.add-view-modal-container .body-modal .add-view-modal button.cancel {
+  background-color: red;
+}
+.add-view-modal-container.modal-show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: visible;
+  transition: all 0.9s;
+}
+.add-view-modal-container.modal-show .overlay {
+  opacity: 0.5;
+  transition: opacity 1.3s;
+}
+.add-view-modal-container.modal-show .body-modal {
+  max-height: 1000px;
+  opacity: 1;
+  transition: 0.3s max-height 0.8s, 0.3s opacity 0.6s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #4d4d4d;
+}
+
+button {
+  cursor: pointer;
+}
+
+.viewIcon {
+  top: 36.5%;
+  right: 8%;
+  display: none;
+  position: absolute;
+}
+.viewIcon img {
+  height: 22px;
+}
+
+.listSection {
+  margin-left: 30%;
+  margin-right: 30%;
+  background-color: #fff;
+}
+
+.stack {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1), 0 1px 1px rgba(0, 0, 0, 0.15), 0 12px 0 -5px #fff, 0 12px 1px -4px rgba(0, 0, 0, 0.15), 0 24px 0 -10px #fff, 0 24px 1px -9px rgba(0, 0, 0, 0.15);
+}
+
+.listHeader {
+  width: 100%;
+  height: 10%;
+  border-bottom: 1px solid #ededed;
+  box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
+  display: grid;
+}
+
+h1 {
+  color: rgba(175, 47, 47, 0.5);
+  font-size: 100px;
+  font-weight: 100;
+  margin-bottom: 1%;
+}
+
+.allCheckbox {
+  display: none;
+}
+
+.all {
+  font-size: 24px;
+  opacity: 0.1;
+  display: none;
+  grid-column: 1;
+  padding: 50%;
+}
+
+.listItems {
+  display: none;
+}
+
+.listInput {
+  font-size: 24px;
+  font-weight: 100;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  color: inherit;
+  margin-left: 5%;
+  grid-column-start: 2;
+  grid-column-end: 8;
+}
+
+.newItem {
+  grid-column: 8;
+  color: #787272;
+  border: 1px solid #e4dcdc;
+  margin: 25px 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+input::placeholder {
+  opacity: 0.3;
+  font-style: italic;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.view {
+  padding: 10px 0px;
+  display: inline-flex;
+  width: 100%;
+  margin-top: 3%;
+}
+
+.list {
+  margin-top: 0px;
+  width: 100%;
+  padding: 0px;
+  text-align: left;
+}
+
+.list li {
+  border-bottom: 1px solid #ededed;
+  position: relative;
+}
+
+.list li label.text {
+  font-size: 24px;
+  font-weight: 100;
+  vertical-align: middle;
+}
+
+.list li.completed label.text {
+  color: #d9d9d9;
+  text-decoration: line-through;
+}
+
+.round {
+  position: relative;
+  margin: 0 5%;
+}
+
+.round label {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  height: 28px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 28px;
+}
+
+.round label:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  left: 7px;
+  opacity: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 12px;
+}
+
+.round input[type=checkbox] {
+  visibility: hidden;
+}
+
+.round input[type=checkbox]:checked + label {
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+}
+
+.round input[type=checkbox]:checked + label:after {
+  opacity: 1;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: white;
+}
+
+.remove {
+  color: rgba(175, 47, 47, 0.3);
+  font-size: 22px;
+  font-weight: 100;
+  font-family: inherit;
+  top: 35%;
+  right: 3%;
+  display: none;
+  position: absolute;
+}
+
+.list li:hover .remove, .list li:hover .viewIcon {
+  display: block;
+}
+
+.todoFooter {
+  display: none;
+  height: 7%;
+  position: relative;
+  font-family: inherit;
+  font-weight: 100;
+}
+
+.filters {
+  display: inline-flex;
+  width: 80%;
+  float: right;
+  margin-top: 0;
+}
+
+.filters li {
+  margin: 10px;
+}
+
+.filters li.selected {
+  margin: 10px;
+  border: 1px solid rgba(175, 47, 47, 0.2);
+  padding: 0 5px;
+}
+
+.count {
+  float: left;
+  padding: 10px 20px;
+}
+
+.clear {
+  position: absolute;
+  right: 2%;
+  top: 15%;
+  display: none;
+  font-family: inherit;
+  font-weight: 100;
+}
+
+/*# sourceMappingURL=main.css.map */
